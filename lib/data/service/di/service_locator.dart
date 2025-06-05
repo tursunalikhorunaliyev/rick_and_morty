@@ -13,6 +13,7 @@ import 'package:rick_and_morty/domain/usercase/add_to_favorite_usecase.dart';
 import 'package:rick_and_morty/domain/usercase/get_character_usecase.dart';
 import 'package:rick_and_morty/domain/usercase/get_favorite_characters_usecase.dart';
 import 'package:rick_and_morty/domain/usercase/remove_from_favorite_usecase.dart';
+import 'package:rick_and_morty/presentation/bloc/character_bloc.dart';
 
 final sl = GetIt.instance;
 
@@ -43,5 +44,5 @@ Future<void> setUp() async {
 
 
   //BloC
-  //sl.registerLazySingleton<CharacterBloc>(() => CharacterBloc(sl<GetCharacterUseCase>(), sl<AddToFavoriteUseCase>(), sl<RemoveFromFavoriteUseCase>(), sl<GetFavoriteCharactersUseCase>()));
+  sl.registerLazySingleton<CharacterBloc>(() => CharacterBloc(sl<GetCharacterUseCase>(), sl<AddToFavoriteUseCase>(), sl<RemoveFromFavoriteUseCase>(), sl<GetFavoriteCharactersUseCase>()));
 }
