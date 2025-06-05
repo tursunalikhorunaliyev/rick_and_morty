@@ -20,13 +20,11 @@ class CharacterRepositoryImpl implements CharacterRepository{
 
   @override
   Future<bool> addToFavorite(Character character) {
-    // TODO: implement addToFavorite
     throw UnimplementedError();
   }
 
   @override
   Future<bool> removeFromFavorite(Character character) {
-    // TODO: implement removeFromFavorite
     throw UnimplementedError();
   }
 
