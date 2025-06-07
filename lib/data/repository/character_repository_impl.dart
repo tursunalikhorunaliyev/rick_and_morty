@@ -14,18 +14,18 @@ class CharacterRepositoryImpl implements CharacterRepository{
 
   @override
   Future<List<Character>> getCharacters({String? name, String? status, String? species, String? type, String? gender, required int page}) async{
-    final response = await apiService.getCharacters(page: page);
+    final response = await apiService.getCharacters(name: name, status: status, species: species, type: type, gender: gender,page: page);
     return response.results.map((e) => e.toDomain()).toList();
   }
 
   @override
-  Future<bool> addToFavorite(Character character) {
-    throw UnimplementedError();
+  Future<void> addToFavorite(Character character) async{
+   return await localDataSource.saveFavorite(character);
   }
 
   @override
-  Future<bool> removeFromFavorite(Character character) {
-    throw UnimplementedError();
+  Future<void> removeFromFavorite(Character character) async{
+    return await localDataSource.removeFavorite(character);
   }
 
   @override

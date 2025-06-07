@@ -20,22 +20,31 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
   final RemoveFromFavoriteUseCase removeFromFavoriteUseCase;
 
   CharacterBloc(this.getCharacterUseCase, this.addToFavoriteUseCase, this.removeFromFavoriteUseCase, this.getFavoriteCharactersUseCase)
-      : super(const CharacterState.data(loadingType: CharacterLoadingType.none, characters: [], favorites: [])) {
+      : super(const CharacterState.data(loadingType: CharacterLoadingType.none, characters: [], favorites: [], filterData: (null, null))) {
     on<CharacterEvent>((event, emit) async {
       await event.when(
         started: () async {},
         getCharacters: (name, status, species, type, gender, page) async {
           emit(state.copyWith(loadingType: CharacterLoadingType.api));
           final characters = await getCharacterUseCase(name: name, status: status, species: species, type: type, gender: gender, page: 1);
-          emit(state.copyWith(loadingType: CharacterLoadingType.none, characters: characters));
+          final favorite = await getFavoriteCharactersUseCase();
+          emit(state.copyWith(loadingType: CharacterLoadingType.none, characters: characters, favorites: favorite));
         },
         getFavoriteCharacters: () async {
           emit(state.copyWith(loadingType: CharacterLoadingType.getFavorites));
           final favoriteCharacters = await getFavoriteCharactersUseCase();
+          print(favoriteCharacters);
           emit(state.copyWith(loadingType: CharacterLoadingType.none, favorites: favoriteCharacters));
         },
-        addToFavorite: () async {},
-        removeFromFavorite: () {},
+        addToFavorite: (character) async {
+          emit(state.copyWith(favorites: await addToFavoriteUseCase(character)));
+        },
+        removeFromFavorite: (character) async {
+          emit(state.copyWith(favorites: await removeFromFavoriteUseCase(character)));
+        },
+        changeFilterData: (characterStatus, characterGender) {
+          emit(state.copyWith(filterData: (characterStatus, characterGender)));
+        },
       );
     });
   }

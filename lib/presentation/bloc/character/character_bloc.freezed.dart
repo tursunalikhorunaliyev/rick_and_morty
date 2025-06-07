@@ -23,8 +23,11 @@ mixin _$CharacterEvent {
             String? species, String? type, CharacterGender? gender, int page)
         getCharacters,
     required TResult Function() getFavoriteCharacters,
-    required TResult Function() addToFavorite,
-    required TResult Function() removeFromFavorite,
+    required TResult Function(Character character) addToFavorite,
+    required TResult Function(Character character) removeFromFavorite,
+    required TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)
+        changeFilterData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,8 +37,11 @@ mixin _$CharacterEvent {
             String? type, CharacterGender? gender, int page)?
         getCharacters,
     TResult? Function()? getFavoriteCharacters,
-    TResult? Function()? addToFavorite,
-    TResult? Function()? removeFromFavorite,
+    TResult? Function(Character character)? addToFavorite,
+    TResult? Function(Character character)? removeFromFavorite,
+    TResult? Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,8 +51,11 @@ mixin _$CharacterEvent {
             String? type, CharacterGender? gender, int page)?
         getCharacters,
     TResult Function()? getFavoriteCharacters,
-    TResult Function()? addToFavorite,
-    TResult Function()? removeFromFavorite,
+    TResult Function(Character character)? addToFavorite,
+    TResult Function(Character character)? removeFromFavorite,
+    TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -58,6 +67,7 @@ mixin _$CharacterEvent {
         getFavoriteCharacters,
     required TResult Function(_AddToFavorite value) addToFavorite,
     required TResult Function(_RemoveFromFavorite value) removeFromFavorite,
+    required TResult Function(_ChangeFilterData value) changeFilterData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,6 +77,7 @@ mixin _$CharacterEvent {
     TResult? Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
     TResult? Function(_AddToFavorite value)? addToFavorite,
     TResult? Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult? Function(_ChangeFilterData value)? changeFilterData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +87,7 @@ mixin _$CharacterEvent {
     TResult Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
     TResult Function(_AddToFavorite value)? addToFavorite,
     TResult Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(_ChangeFilterData value)? changeFilterData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -148,8 +160,11 @@ class _$StartedImpl implements _Started {
             String? species, String? type, CharacterGender? gender, int page)
         getCharacters,
     required TResult Function() getFavoriteCharacters,
-    required TResult Function() addToFavorite,
-    required TResult Function() removeFromFavorite,
+    required TResult Function(Character character) addToFavorite,
+    required TResult Function(Character character) removeFromFavorite,
+    required TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)
+        changeFilterData,
   }) {
     return started();
   }
@@ -162,8 +177,11 @@ class _$StartedImpl implements _Started {
             String? type, CharacterGender? gender, int page)?
         getCharacters,
     TResult? Function()? getFavoriteCharacters,
-    TResult? Function()? addToFavorite,
-    TResult? Function()? removeFromFavorite,
+    TResult? Function(Character character)? addToFavorite,
+    TResult? Function(Character character)? removeFromFavorite,
+    TResult? Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
   }) {
     return started?.call();
   }
@@ -176,8 +194,11 @@ class _$StartedImpl implements _Started {
             String? type, CharacterGender? gender, int page)?
         getCharacters,
     TResult Function()? getFavoriteCharacters,
-    TResult Function()? addToFavorite,
-    TResult Function()? removeFromFavorite,
+    TResult Function(Character character)? addToFavorite,
+    TResult Function(Character character)? removeFromFavorite,
+    TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -195,6 +216,7 @@ class _$StartedImpl implements _Started {
         getFavoriteCharacters,
     required TResult Function(_AddToFavorite value) addToFavorite,
     required TResult Function(_RemoveFromFavorite value) removeFromFavorite,
+    required TResult Function(_ChangeFilterData value) changeFilterData,
   }) {
     return started(this);
   }
@@ -207,6 +229,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
     TResult? Function(_AddToFavorite value)? addToFavorite,
     TResult? Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult? Function(_ChangeFilterData value)? changeFilterData,
   }) {
     return started?.call(this);
   }
@@ -219,6 +242,7 @@ class _$StartedImpl implements _Started {
     TResult Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
     TResult Function(_AddToFavorite value)? addToFavorite,
     TResult Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(_ChangeFilterData value)? changeFilterData,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -358,8 +382,11 @@ class _$GetCharactersImpl implements _GetCharacters {
             String? species, String? type, CharacterGender? gender, int page)
         getCharacters,
     required TResult Function() getFavoriteCharacters,
-    required TResult Function() addToFavorite,
-    required TResult Function() removeFromFavorite,
+    required TResult Function(Character character) addToFavorite,
+    required TResult Function(Character character) removeFromFavorite,
+    required TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)
+        changeFilterData,
   }) {
     return getCharacters(name, status, species, type, gender, page);
   }
@@ -372,8 +399,11 @@ class _$GetCharactersImpl implements _GetCharacters {
             String? type, CharacterGender? gender, int page)?
         getCharacters,
     TResult? Function()? getFavoriteCharacters,
-    TResult? Function()? addToFavorite,
-    TResult? Function()? removeFromFavorite,
+    TResult? Function(Character character)? addToFavorite,
+    TResult? Function(Character character)? removeFromFavorite,
+    TResult? Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
   }) {
     return getCharacters?.call(name, status, species, type, gender, page);
   }
@@ -386,8 +416,11 @@ class _$GetCharactersImpl implements _GetCharacters {
             String? type, CharacterGender? gender, int page)?
         getCharacters,
     TResult Function()? getFavoriteCharacters,
-    TResult Function()? addToFavorite,
-    TResult Function()? removeFromFavorite,
+    TResult Function(Character character)? addToFavorite,
+    TResult Function(Character character)? removeFromFavorite,
+    TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
     required TResult orElse(),
   }) {
     if (getCharacters != null) {
@@ -405,6 +438,7 @@ class _$GetCharactersImpl implements _GetCharacters {
         getFavoriteCharacters,
     required TResult Function(_AddToFavorite value) addToFavorite,
     required TResult Function(_RemoveFromFavorite value) removeFromFavorite,
+    required TResult Function(_ChangeFilterData value) changeFilterData,
   }) {
     return getCharacters(this);
   }
@@ -417,6 +451,7 @@ class _$GetCharactersImpl implements _GetCharacters {
     TResult? Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
     TResult? Function(_AddToFavorite value)? addToFavorite,
     TResult? Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult? Function(_ChangeFilterData value)? changeFilterData,
   }) {
     return getCharacters?.call(this);
   }
@@ -429,6 +464,7 @@ class _$GetCharactersImpl implements _GetCharacters {
     TResult Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
     TResult Function(_AddToFavorite value)? addToFavorite,
     TResult Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(_ChangeFilterData value)? changeFilterData,
     required TResult orElse(),
   }) {
     if (getCharacters != null) {
@@ -509,8 +545,11 @@ class _$GetFavoriteCharactersImpl implements _GetFavoriteCharacters {
             String? species, String? type, CharacterGender? gender, int page)
         getCharacters,
     required TResult Function() getFavoriteCharacters,
-    required TResult Function() addToFavorite,
-    required TResult Function() removeFromFavorite,
+    required TResult Function(Character character) addToFavorite,
+    required TResult Function(Character character) removeFromFavorite,
+    required TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)
+        changeFilterData,
   }) {
     return getFavoriteCharacters();
   }
@@ -523,8 +562,11 @@ class _$GetFavoriteCharactersImpl implements _GetFavoriteCharacters {
             String? type, CharacterGender? gender, int page)?
         getCharacters,
     TResult? Function()? getFavoriteCharacters,
-    TResult? Function()? addToFavorite,
-    TResult? Function()? removeFromFavorite,
+    TResult? Function(Character character)? addToFavorite,
+    TResult? Function(Character character)? removeFromFavorite,
+    TResult? Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
   }) {
     return getFavoriteCharacters?.call();
   }
@@ -537,8 +579,11 @@ class _$GetFavoriteCharactersImpl implements _GetFavoriteCharacters {
             String? type, CharacterGender? gender, int page)?
         getCharacters,
     TResult Function()? getFavoriteCharacters,
-    TResult Function()? addToFavorite,
-    TResult Function()? removeFromFavorite,
+    TResult Function(Character character)? addToFavorite,
+    TResult Function(Character character)? removeFromFavorite,
+    TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
     required TResult orElse(),
   }) {
     if (getFavoriteCharacters != null) {
@@ -556,6 +601,7 @@ class _$GetFavoriteCharactersImpl implements _GetFavoriteCharacters {
         getFavoriteCharacters,
     required TResult Function(_AddToFavorite value) addToFavorite,
     required TResult Function(_RemoveFromFavorite value) removeFromFavorite,
+    required TResult Function(_ChangeFilterData value) changeFilterData,
   }) {
     return getFavoriteCharacters(this);
   }
@@ -568,6 +614,7 @@ class _$GetFavoriteCharactersImpl implements _GetFavoriteCharacters {
     TResult? Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
     TResult? Function(_AddToFavorite value)? addToFavorite,
     TResult? Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult? Function(_ChangeFilterData value)? changeFilterData,
   }) {
     return getFavoriteCharacters?.call(this);
   }
@@ -580,6 +627,7 @@ class _$GetFavoriteCharactersImpl implements _GetFavoriteCharacters {
     TResult Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
     TResult Function(_AddToFavorite value)? addToFavorite,
     TResult Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(_ChangeFilterData value)? changeFilterData,
     required TResult orElse(),
   }) {
     if (getFavoriteCharacters != null) {
@@ -598,6 +646,10 @@ abstract class _$$AddToFavoriteImplCopyWith<$Res> {
   factory _$$AddToFavoriteImplCopyWith(
           _$AddToFavoriteImpl value, $Res Function(_$AddToFavoriteImpl) then) =
       __$$AddToFavoriteImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Character character});
+
+  $CharacterCopyWith<$Res> get character;
 }
 
 /// @nodoc
@@ -610,26 +662,62 @@ class __$$AddToFavoriteImplCopyWithImpl<$Res>
 
   /// Create a copy of CharacterEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? character = null,
+  }) {
+    return _then(_$AddToFavoriteImpl(
+      null == character
+          ? _value.character
+          : character // ignore: cast_nullable_to_non_nullable
+              as Character,
+    ));
+  }
+
+  /// Create a copy of CharacterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CharacterCopyWith<$Res> get character {
+    return $CharacterCopyWith<$Res>(_value.character, (value) {
+      return _then(_value.copyWith(character: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$AddToFavoriteImpl implements _AddToFavorite {
-  const _$AddToFavoriteImpl();
+  const _$AddToFavoriteImpl(this.character);
+
+  @override
+  final Character character;
 
   @override
   String toString() {
-    return 'CharacterEvent.addToFavorite()';
+    return 'CharacterEvent.addToFavorite(character: $character)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AddToFavoriteImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$AddToFavoriteImpl &&
+            (identical(other.character, character) ||
+                other.character == character));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, character);
+
+  /// Create a copy of CharacterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddToFavoriteImplCopyWith<_$AddToFavoriteImpl> get copyWith =>
+      __$$AddToFavoriteImplCopyWithImpl<_$AddToFavoriteImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -639,10 +727,13 @@ class _$AddToFavoriteImpl implements _AddToFavorite {
             String? species, String? type, CharacterGender? gender, int page)
         getCharacters,
     required TResult Function() getFavoriteCharacters,
-    required TResult Function() addToFavorite,
-    required TResult Function() removeFromFavorite,
+    required TResult Function(Character character) addToFavorite,
+    required TResult Function(Character character) removeFromFavorite,
+    required TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)
+        changeFilterData,
   }) {
-    return addToFavorite();
+    return addToFavorite(character);
   }
 
   @override
@@ -653,10 +744,13 @@ class _$AddToFavoriteImpl implements _AddToFavorite {
             String? type, CharacterGender? gender, int page)?
         getCharacters,
     TResult? Function()? getFavoriteCharacters,
-    TResult? Function()? addToFavorite,
-    TResult? Function()? removeFromFavorite,
+    TResult? Function(Character character)? addToFavorite,
+    TResult? Function(Character character)? removeFromFavorite,
+    TResult? Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
   }) {
-    return addToFavorite?.call();
+    return addToFavorite?.call(character);
   }
 
   @override
@@ -667,12 +761,15 @@ class _$AddToFavoriteImpl implements _AddToFavorite {
             String? type, CharacterGender? gender, int page)?
         getCharacters,
     TResult Function()? getFavoriteCharacters,
-    TResult Function()? addToFavorite,
-    TResult Function()? removeFromFavorite,
+    TResult Function(Character character)? addToFavorite,
+    TResult Function(Character character)? removeFromFavorite,
+    TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
     required TResult orElse(),
   }) {
     if (addToFavorite != null) {
-      return addToFavorite();
+      return addToFavorite(character);
     }
     return orElse();
   }
@@ -686,6 +783,7 @@ class _$AddToFavoriteImpl implements _AddToFavorite {
         getFavoriteCharacters,
     required TResult Function(_AddToFavorite value) addToFavorite,
     required TResult Function(_RemoveFromFavorite value) removeFromFavorite,
+    required TResult Function(_ChangeFilterData value) changeFilterData,
   }) {
     return addToFavorite(this);
   }
@@ -698,6 +796,7 @@ class _$AddToFavoriteImpl implements _AddToFavorite {
     TResult? Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
     TResult? Function(_AddToFavorite value)? addToFavorite,
     TResult? Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult? Function(_ChangeFilterData value)? changeFilterData,
   }) {
     return addToFavorite?.call(this);
   }
@@ -710,6 +809,7 @@ class _$AddToFavoriteImpl implements _AddToFavorite {
     TResult Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
     TResult Function(_AddToFavorite value)? addToFavorite,
     TResult Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(_ChangeFilterData value)? changeFilterData,
     required TResult orElse(),
   }) {
     if (addToFavorite != null) {
@@ -720,7 +820,15 @@ class _$AddToFavoriteImpl implements _AddToFavorite {
 }
 
 abstract class _AddToFavorite implements CharacterEvent {
-  const factory _AddToFavorite() = _$AddToFavoriteImpl;
+  const factory _AddToFavorite(final Character character) = _$AddToFavoriteImpl;
+
+  Character get character;
+
+  /// Create a copy of CharacterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddToFavoriteImplCopyWith<_$AddToFavoriteImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -728,6 +836,10 @@ abstract class _$$RemoveFromFavoriteImplCopyWith<$Res> {
   factory _$$RemoveFromFavoriteImplCopyWith(_$RemoveFromFavoriteImpl value,
           $Res Function(_$RemoveFromFavoriteImpl) then) =
       __$$RemoveFromFavoriteImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Character character});
+
+  $CharacterCopyWith<$Res> get character;
 }
 
 /// @nodoc
@@ -740,26 +852,63 @@ class __$$RemoveFromFavoriteImplCopyWithImpl<$Res>
 
   /// Create a copy of CharacterEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? character = null,
+  }) {
+    return _then(_$RemoveFromFavoriteImpl(
+      null == character
+          ? _value.character
+          : character // ignore: cast_nullable_to_non_nullable
+              as Character,
+    ));
+  }
+
+  /// Create a copy of CharacterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CharacterCopyWith<$Res> get character {
+    return $CharacterCopyWith<$Res>(_value.character, (value) {
+      return _then(_value.copyWith(character: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$RemoveFromFavoriteImpl implements _RemoveFromFavorite {
-  const _$RemoveFromFavoriteImpl();
+  const _$RemoveFromFavoriteImpl(this.character);
+
+  @override
+  final Character character;
 
   @override
   String toString() {
-    return 'CharacterEvent.removeFromFavorite()';
+    return 'CharacterEvent.removeFromFavorite(character: $character)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RemoveFromFavoriteImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveFromFavoriteImpl &&
+            (identical(other.character, character) ||
+                other.character == character));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, character);
+
+  /// Create a copy of CharacterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveFromFavoriteImplCopyWith<_$RemoveFromFavoriteImpl> get copyWith =>
+      __$$RemoveFromFavoriteImplCopyWithImpl<_$RemoveFromFavoriteImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -769,10 +918,13 @@ class _$RemoveFromFavoriteImpl implements _RemoveFromFavorite {
             String? species, String? type, CharacterGender? gender, int page)
         getCharacters,
     required TResult Function() getFavoriteCharacters,
-    required TResult Function() addToFavorite,
-    required TResult Function() removeFromFavorite,
+    required TResult Function(Character character) addToFavorite,
+    required TResult Function(Character character) removeFromFavorite,
+    required TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)
+        changeFilterData,
   }) {
-    return removeFromFavorite();
+    return removeFromFavorite(character);
   }
 
   @override
@@ -783,10 +935,13 @@ class _$RemoveFromFavoriteImpl implements _RemoveFromFavorite {
             String? type, CharacterGender? gender, int page)?
         getCharacters,
     TResult? Function()? getFavoriteCharacters,
-    TResult? Function()? addToFavorite,
-    TResult? Function()? removeFromFavorite,
+    TResult? Function(Character character)? addToFavorite,
+    TResult? Function(Character character)? removeFromFavorite,
+    TResult? Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
   }) {
-    return removeFromFavorite?.call();
+    return removeFromFavorite?.call(character);
   }
 
   @override
@@ -797,12 +952,15 @@ class _$RemoveFromFavoriteImpl implements _RemoveFromFavorite {
             String? type, CharacterGender? gender, int page)?
         getCharacters,
     TResult Function()? getFavoriteCharacters,
-    TResult Function()? addToFavorite,
-    TResult Function()? removeFromFavorite,
+    TResult Function(Character character)? addToFavorite,
+    TResult Function(Character character)? removeFromFavorite,
+    TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
     required TResult orElse(),
   }) {
     if (removeFromFavorite != null) {
-      return removeFromFavorite();
+      return removeFromFavorite(character);
     }
     return orElse();
   }
@@ -816,6 +974,7 @@ class _$RemoveFromFavoriteImpl implements _RemoveFromFavorite {
         getFavoriteCharacters,
     required TResult Function(_AddToFavorite value) addToFavorite,
     required TResult Function(_RemoveFromFavorite value) removeFromFavorite,
+    required TResult Function(_ChangeFilterData value) changeFilterData,
   }) {
     return removeFromFavorite(this);
   }
@@ -828,6 +987,7 @@ class _$RemoveFromFavoriteImpl implements _RemoveFromFavorite {
     TResult? Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
     TResult? Function(_AddToFavorite value)? addToFavorite,
     TResult? Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult? Function(_ChangeFilterData value)? changeFilterData,
   }) {
     return removeFromFavorite?.call(this);
   }
@@ -840,6 +1000,7 @@ class _$RemoveFromFavoriteImpl implements _RemoveFromFavorite {
     TResult Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
     TResult Function(_AddToFavorite value)? addToFavorite,
     TResult Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(_ChangeFilterData value)? changeFilterData,
     required TResult orElse(),
   }) {
     if (removeFromFavorite != null) {
@@ -850,7 +1011,209 @@ class _$RemoveFromFavoriteImpl implements _RemoveFromFavorite {
 }
 
 abstract class _RemoveFromFavorite implements CharacterEvent {
-  const factory _RemoveFromFavorite() = _$RemoveFromFavoriteImpl;
+  const factory _RemoveFromFavorite(final Character character) =
+      _$RemoveFromFavoriteImpl;
+
+  Character get character;
+
+  /// Create a copy of CharacterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RemoveFromFavoriteImplCopyWith<_$RemoveFromFavoriteImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeFilterDataImplCopyWith<$Res> {
+  factory _$$ChangeFilterDataImplCopyWith(_$ChangeFilterDataImpl value,
+          $Res Function(_$ChangeFilterDataImpl) then) =
+      __$$ChangeFilterDataImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {CharacterStatus? characterStatus, CharacterGender? characterGender});
+}
+
+/// @nodoc
+class __$$ChangeFilterDataImplCopyWithImpl<$Res>
+    extends _$CharacterEventCopyWithImpl<$Res, _$ChangeFilterDataImpl>
+    implements _$$ChangeFilterDataImplCopyWith<$Res> {
+  __$$ChangeFilterDataImplCopyWithImpl(_$ChangeFilterDataImpl _value,
+      $Res Function(_$ChangeFilterDataImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CharacterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? characterStatus = freezed,
+    Object? characterGender = freezed,
+  }) {
+    return _then(_$ChangeFilterDataImpl(
+      characterStatus: freezed == characterStatus
+          ? _value.characterStatus
+          : characterStatus // ignore: cast_nullable_to_non_nullable
+              as CharacterStatus?,
+      characterGender: freezed == characterGender
+          ? _value.characterGender
+          : characterGender // ignore: cast_nullable_to_non_nullable
+              as CharacterGender?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeFilterDataImpl implements _ChangeFilterData {
+  const _$ChangeFilterDataImpl({this.characterStatus, this.characterGender});
+
+  @override
+  final CharacterStatus? characterStatus;
+  @override
+  final CharacterGender? characterGender;
+
+  @override
+  String toString() {
+    return 'CharacterEvent.changeFilterData(characterStatus: $characterStatus, characterGender: $characterGender)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeFilterDataImpl &&
+            (identical(other.characterStatus, characterStatus) ||
+                other.characterStatus == characterStatus) &&
+            (identical(other.characterGender, characterGender) ||
+                other.characterGender == characterGender));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, characterStatus, characterGender);
+
+  /// Create a copy of CharacterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeFilterDataImplCopyWith<_$ChangeFilterDataImpl> get copyWith =>
+      __$$ChangeFilterDataImplCopyWithImpl<_$ChangeFilterDataImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String? name, CharacterStatus? status,
+            String? species, String? type, CharacterGender? gender, int page)
+        getCharacters,
+    required TResult Function() getFavoriteCharacters,
+    required TResult Function(Character character) addToFavorite,
+    required TResult Function(Character character) removeFromFavorite,
+    required TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)
+        changeFilterData,
+  }) {
+    return changeFilterData(characterStatus, characterGender);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String? name, CharacterStatus? status, String? species,
+            String? type, CharacterGender? gender, int page)?
+        getCharacters,
+    TResult? Function()? getFavoriteCharacters,
+    TResult? Function(Character character)? addToFavorite,
+    TResult? Function(Character character)? removeFromFavorite,
+    TResult? Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
+  }) {
+    return changeFilterData?.call(characterStatus, characterGender);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String? name, CharacterStatus? status, String? species,
+            String? type, CharacterGender? gender, int page)?
+        getCharacters,
+    TResult Function()? getFavoriteCharacters,
+    TResult Function(Character character)? addToFavorite,
+    TResult Function(Character character)? removeFromFavorite,
+    TResult Function(
+            CharacterStatus? characterStatus, CharacterGender? characterGender)?
+        changeFilterData,
+    required TResult orElse(),
+  }) {
+    if (changeFilterData != null) {
+      return changeFilterData(characterStatus, characterGender);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetCharacters value) getCharacters,
+    required TResult Function(_GetFavoriteCharacters value)
+        getFavoriteCharacters,
+    required TResult Function(_AddToFavorite value) addToFavorite,
+    required TResult Function(_RemoveFromFavorite value) removeFromFavorite,
+    required TResult Function(_ChangeFilterData value) changeFilterData,
+  }) {
+    return changeFilterData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetCharacters value)? getCharacters,
+    TResult? Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
+    TResult? Function(_AddToFavorite value)? addToFavorite,
+    TResult? Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult? Function(_ChangeFilterData value)? changeFilterData,
+  }) {
+    return changeFilterData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetCharacters value)? getCharacters,
+    TResult Function(_GetFavoriteCharacters value)? getFavoriteCharacters,
+    TResult Function(_AddToFavorite value)? addToFavorite,
+    TResult Function(_RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(_ChangeFilterData value)? changeFilterData,
+    required TResult orElse(),
+  }) {
+    if (changeFilterData != null) {
+      return changeFilterData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeFilterData implements CharacterEvent {
+  const factory _ChangeFilterData(
+      {final CharacterStatus? characterStatus,
+      final CharacterGender? characterGender}) = _$ChangeFilterDataImpl;
+
+  CharacterStatus? get characterStatus;
+  CharacterGender? get characterGender;
+
+  /// Create a copy of CharacterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChangeFilterDataImplCopyWith<_$ChangeFilterDataImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -858,24 +1221,35 @@ mixin _$CharacterState {
   CharacterLoadingType get loadingType => throw _privateConstructorUsedError;
   List<Character> get characters => throw _privateConstructorUsedError;
   List<Character> get favorites => throw _privateConstructorUsedError;
+  (CharacterStatus?, CharacterGender?) get filterData =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CharacterLoadingType loadingType,
-            List<Character> characters, List<Character> favorites)
+    required TResult Function(
+            CharacterLoadingType loadingType,
+            List<Character> characters,
+            List<Character> favorites,
+            (CharacterStatus?, CharacterGender?) filterData)
         data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CharacterLoadingType loadingType,
-            List<Character> characters, List<Character> favorites)?
+    TResult? Function(
+            CharacterLoadingType loadingType,
+            List<Character> characters,
+            List<Character> favorites,
+            (CharacterStatus?, CharacterGender?) filterData)?
         data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CharacterLoadingType loadingType,
-            List<Character> characters, List<Character> favorites)?
+    TResult Function(
+            CharacterLoadingType loadingType,
+            List<Character> characters,
+            List<Character> favorites,
+            (CharacterStatus?, CharacterGender?) filterData)?
         data,
     required TResult orElse(),
   }) =>
@@ -913,7 +1287,8 @@ abstract class $CharacterStateCopyWith<$Res> {
   $Res call(
       {CharacterLoadingType loadingType,
       List<Character> characters,
-      List<Character> favorites});
+      List<Character> favorites,
+      (CharacterStatus?, CharacterGender?) filterData});
 }
 
 /// @nodoc
@@ -934,6 +1309,7 @@ class _$CharacterStateCopyWithImpl<$Res, $Val extends CharacterState>
     Object? loadingType = null,
     Object? characters = null,
     Object? favorites = null,
+    Object? filterData = null,
   }) {
     return _then(_value.copyWith(
       loadingType: null == loadingType
@@ -948,6 +1324,10 @@ class _$CharacterStateCopyWithImpl<$Res, $Val extends CharacterState>
           ? _value.favorites
           : favorites // ignore: cast_nullable_to_non_nullable
               as List<Character>,
+      filterData: null == filterData
+          ? _value.filterData
+          : filterData // ignore: cast_nullable_to_non_nullable
+              as (CharacterStatus?, CharacterGender?),
     ) as $Val);
   }
 }
@@ -963,7 +1343,8 @@ abstract class _$$DataImplCopyWith<$Res>
   $Res call(
       {CharacterLoadingType loadingType,
       List<Character> characters,
-      List<Character> favorites});
+      List<Character> favorites,
+      (CharacterStatus?, CharacterGender?) filterData});
 }
 
 /// @nodoc
@@ -981,6 +1362,7 @@ class __$$DataImplCopyWithImpl<$Res>
     Object? loadingType = null,
     Object? characters = null,
     Object? favorites = null,
+    Object? filterData = null,
   }) {
     return _then(_$DataImpl(
       loadingType: null == loadingType
@@ -995,6 +1377,10 @@ class __$$DataImplCopyWithImpl<$Res>
           ? _value._favorites
           : favorites // ignore: cast_nullable_to_non_nullable
               as List<Character>,
+      filterData: null == filterData
+          ? _value.filterData
+          : filterData // ignore: cast_nullable_to_non_nullable
+              as (CharacterStatus?, CharacterGender?),
     ));
   }
 }
@@ -1005,7 +1391,8 @@ class _$DataImpl implements _Data {
   const _$DataImpl(
       {required this.loadingType,
       required final List<Character> characters,
-      required final List<Character> favorites})
+      required final List<Character> favorites,
+      required this.filterData})
       : _characters = characters,
         _favorites = favorites;
 
@@ -1028,8 +1415,11 @@ class _$DataImpl implements _Data {
   }
 
   @override
+  final (CharacterStatus?, CharacterGender?) filterData;
+
+  @override
   String toString() {
-    return 'CharacterState.data(loadingType: $loadingType, characters: $characters, favorites: $favorites)';
+    return 'CharacterState.data(loadingType: $loadingType, characters: $characters, favorites: $favorites, filterData: $filterData)';
   }
 
   @override
@@ -1042,7 +1432,9 @@ class _$DataImpl implements _Data {
             const DeepCollectionEquality()
                 .equals(other._characters, _characters) &&
             const DeepCollectionEquality()
-                .equals(other._favorites, _favorites));
+                .equals(other._favorites, _favorites) &&
+            (identical(other.filterData, filterData) ||
+                other.filterData == filterData));
   }
 
   @override
@@ -1050,7 +1442,8 @@ class _$DataImpl implements _Data {
       runtimeType,
       loadingType,
       const DeepCollectionEquality().hash(_characters),
-      const DeepCollectionEquality().hash(_favorites));
+      const DeepCollectionEquality().hash(_favorites),
+      filterData);
 
   /// Create a copy of CharacterState
   /// with the given fields replaced by the non-null parameter values.
@@ -1063,33 +1456,42 @@ class _$DataImpl implements _Data {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CharacterLoadingType loadingType,
-            List<Character> characters, List<Character> favorites)
+    required TResult Function(
+            CharacterLoadingType loadingType,
+            List<Character> characters,
+            List<Character> favorites,
+            (CharacterStatus?, CharacterGender?) filterData)
         data,
   }) {
-    return data(loadingType, characters, favorites);
+    return data(loadingType, characters, favorites, filterData);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CharacterLoadingType loadingType,
-            List<Character> characters, List<Character> favorites)?
+    TResult? Function(
+            CharacterLoadingType loadingType,
+            List<Character> characters,
+            List<Character> favorites,
+            (CharacterStatus?, CharacterGender?) filterData)?
         data,
   }) {
-    return data?.call(loadingType, characters, favorites);
+    return data?.call(loadingType, characters, favorites, filterData);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CharacterLoadingType loadingType,
-            List<Character> characters, List<Character> favorites)?
+    TResult Function(
+            CharacterLoadingType loadingType,
+            List<Character> characters,
+            List<Character> favorites,
+            (CharacterStatus?, CharacterGender?) filterData)?
         data,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(loadingType, characters, favorites);
+      return data(loadingType, characters, favorites, filterData);
     }
     return orElse();
   }
@@ -1125,9 +1527,11 @@ class _$DataImpl implements _Data {
 
 abstract class _Data implements CharacterState {
   const factory _Data(
-      {required final CharacterLoadingType loadingType,
-      required final List<Character> characters,
-      required final List<Character> favorites}) = _$DataImpl;
+          {required final CharacterLoadingType loadingType,
+          required final List<Character> characters,
+          required final List<Character> favorites,
+          required final (CharacterStatus?, CharacterGender?) filterData}) =
+      _$DataImpl;
 
   @override
   CharacterLoadingType get loadingType;
@@ -1135,6 +1539,8 @@ abstract class _Data implements CharacterState {
   List<Character> get characters;
   @override
   List<Character> get favorites;
+  @override
+  (CharacterStatus?, CharacterGender?) get filterData;
 
   /// Create a copy of CharacterState
   /// with the given fields replaced by the non-null parameter values.

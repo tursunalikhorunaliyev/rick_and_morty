@@ -7,7 +7,7 @@ class AddToFavoriteUseCase {
   AddToFavoriteUseCase({required this.characterRepository});
 
   Future<List<Character>> call(Character character) async {
-    await characterRepository.removeFromFavorite(character);
+    await characterRepository.addToFavorite(character);
     return characterRepository.allFavoriteCharacters();
   }
 }
