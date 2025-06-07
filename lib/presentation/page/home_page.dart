@@ -93,10 +93,7 @@ class _HomePageState extends State<HomePage> {
                 child: (state.loadingType == CharacterLoadingType.api || state.loadingType == CharacterLoadingType.getFavorites)
                     ? const CircularLoading()
                     : state.loadingType == CharacterLoadingType.none
-                        ? state.characters.isEmpty
-                            ? Center(child: Text("No characters found", style: GoogleFonts.openSans(fontSize: 32)))
-                            : RefreshIndicator(
-                                edgeOffset: 20,
+                        ? RefreshIndicator(
                                 onRefresh: () async {
                                   _characterBloc.add(CharacterEvent.getCharacters(status: state.filterData.$1, gender: state.filterData.$2, page: 1));
                                 },
@@ -105,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                                   physics: const BouncingScrollPhysics(),
                                   itemCount: state.characters.length,
                                   itemBuilder: (context, index) => Padding(
-                                    padding: const EdgeInsets.symmetric(vertical: 16),
+                                    padding: const EdgeInsets.symmetric(vertical: 10),
                                     child: Column(
                                       children: [
                                         CharacterCard(

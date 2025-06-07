@@ -29,7 +29,7 @@ class CharacterCard extends StatelessWidget {
               child: CachedNetworkImage(
                 imageUrl: character.image,
                 fit: BoxFit.cover,
-                height: 250,
+                height: 236,
                 width: double.infinity,
               ),
             ),

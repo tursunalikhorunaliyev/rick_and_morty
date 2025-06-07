@@ -4,7 +4,7 @@ class CircularLoading extends StatelessWidget {
   final double scale;
   final Color color;
 
-  const CircularLoading({super.key, this.scale = 0.8, this.color = Colors.amber});
+  const CircularLoading({super.key, this.scale = 0.8, this.color = Colors.purple});
 
   @override
   Widget build(BuildContext context) {

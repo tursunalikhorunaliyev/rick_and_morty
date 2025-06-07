@@ -22,6 +22,10 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       body: PageView(
         controller: _pageController,
+        onPageChanged: (value) {
+          _currentPage = value;
+          setState(() {});
+        },
         children: const [HomePage(), FavoritePage()],
       ),
       bottomNavigationBar: BottomNavigationBar(
