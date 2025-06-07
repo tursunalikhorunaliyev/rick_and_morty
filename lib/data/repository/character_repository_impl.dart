@@ -13,9 +13,9 @@ class CharacterRepositoryImpl implements CharacterRepository{
   CharacterRepositoryImpl({required this.apiService, required this.localDataSource});
 
   @override
-  Future<List<Character>> getCharacters({String? name, String? status, String? species, String? type, String? gender, required int page}) async{
+  Future<(List<Character>, int pages)> getCharacters({String? name, String? status, String? species, String? type, String? gender, required int page}) async{
     final response = await apiService.getCharacters(name: name, status: status, species: species, type: type, gender: gender,page: page);
-    return response.results.map((e) => e.toDomain()).toList();
+    return (response.results.map((e) => e.toDomain()).toList(), response.info.pages);
   }
 
   @override

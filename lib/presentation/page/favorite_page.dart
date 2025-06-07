@@ -27,6 +27,7 @@ class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("Favorite characters", style: GoogleFonts.openSans(fontSize: 24))),
       body: BlocBuilder<CharacterBloc, CharacterState>(
         builder: (context, state) {
           return (state.loadingType == CharacterLoadingType.api || state.loadingType == CharacterLoadingType.getFavorites)
@@ -40,12 +41,12 @@ class _FavoritePageState extends State<FavoritePage> {
                           ),
                         )
                       : RefreshIndicator(
-                          edgeOffset: 60,
+                          edgeOffset: 20,
                           onRefresh: () async {
                             _characterBloc.add(const CharacterEvent.getCharacters(page: 1));
                           },
                           child: ListView.builder(
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 50),
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
                             physics: const BouncingScrollPhysics(),
                             itemCount: state.favorites.length,
                             itemBuilder: (context, index) => Padding(

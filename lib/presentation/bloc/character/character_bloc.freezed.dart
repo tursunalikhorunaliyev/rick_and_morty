@@ -20,7 +20,7 @@ mixin _$CharacterEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String? name, CharacterStatus? status,
-            String? species, String? type, CharacterGender? gender, int page)
+            CharacterGender? gender, int page)
         getCharacters,
     required TResult Function() getFavoriteCharacters,
     required TResult Function(Character character) addToFavorite,
@@ -33,8 +33,8 @@ mixin _$CharacterEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult? Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult? Function()? getFavoriteCharacters,
     TResult? Function(Character character)? addToFavorite,
@@ -47,8 +47,8 @@ mixin _$CharacterEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult Function()? getFavoriteCharacters,
     TResult Function(Character character)? addToFavorite,
@@ -157,7 +157,7 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String? name, CharacterStatus? status,
-            String? species, String? type, CharacterGender? gender, int page)
+            CharacterGender? gender, int page)
         getCharacters,
     required TResult Function() getFavoriteCharacters,
     required TResult Function(Character character) addToFavorite,
@@ -173,8 +173,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult? Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult? Function()? getFavoriteCharacters,
     TResult? Function(Character character)? addToFavorite,
@@ -190,8 +190,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult Function()? getFavoriteCharacters,
     TResult Function(Character character)? addToFavorite,
@@ -265,8 +265,6 @@ abstract class _$$GetCharactersImplCopyWith<$Res> {
   $Res call(
       {String? name,
       CharacterStatus? status,
-      String? species,
-      String? type,
       CharacterGender? gender,
       int page});
 }
@@ -286,8 +284,6 @@ class __$$GetCharactersImplCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? status = freezed,
-    Object? species = freezed,
-    Object? type = freezed,
     Object? gender = freezed,
     Object? page = null,
   }) {
@@ -300,14 +296,6 @@ class __$$GetCharactersImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as CharacterStatus?,
-      species: freezed == species
-          ? _value.species
-          : species // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
       gender: freezed == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
@@ -324,21 +312,12 @@ class __$$GetCharactersImplCopyWithImpl<$Res>
 
 class _$GetCharactersImpl implements _GetCharacters {
   const _$GetCharactersImpl(
-      {this.name,
-      this.status,
-      this.species,
-      this.type,
-      this.gender,
-      required this.page});
+      {this.name, this.status, this.gender, required this.page});
 
   @override
   final String? name;
   @override
   final CharacterStatus? status;
-  @override
-  final String? species;
-  @override
-  final String? type;
   @override
   final CharacterGender? gender;
   @override
@@ -346,7 +325,7 @@ class _$GetCharactersImpl implements _GetCharacters {
 
   @override
   String toString() {
-    return 'CharacterEvent.getCharacters(name: $name, status: $status, species: $species, type: $type, gender: $gender, page: $page)';
+    return 'CharacterEvent.getCharacters(name: $name, status: $status, gender: $gender, page: $page)';
   }
 
   @override
@@ -356,15 +335,12 @@ class _$GetCharactersImpl implements _GetCharacters {
             other is _$GetCharactersImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.species, species) || other.species == species) &&
-            (identical(other.type, type) || other.type == type) &&
             (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.page, page) || other.page == page));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, name, status, species, type, gender, page);
+  int get hashCode => Object.hash(runtimeType, name, status, gender, page);
 
   /// Create a copy of CharacterEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -379,7 +355,7 @@ class _$GetCharactersImpl implements _GetCharacters {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String? name, CharacterStatus? status,
-            String? species, String? type, CharacterGender? gender, int page)
+            CharacterGender? gender, int page)
         getCharacters,
     required TResult Function() getFavoriteCharacters,
     required TResult Function(Character character) addToFavorite,
@@ -388,15 +364,15 @@ class _$GetCharactersImpl implements _GetCharacters {
             CharacterStatus? characterStatus, CharacterGender? characterGender)
         changeFilterData,
   }) {
-    return getCharacters(name, status, species, type, gender, page);
+    return getCharacters(name, status, gender, page);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult? Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult? Function()? getFavoriteCharacters,
     TResult? Function(Character character)? addToFavorite,
@@ -405,15 +381,15 @@ class _$GetCharactersImpl implements _GetCharacters {
             CharacterStatus? characterStatus, CharacterGender? characterGender)?
         changeFilterData,
   }) {
-    return getCharacters?.call(name, status, species, type, gender, page);
+    return getCharacters?.call(name, status, gender, page);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult Function()? getFavoriteCharacters,
     TResult Function(Character character)? addToFavorite,
@@ -424,7 +400,7 @@ class _$GetCharactersImpl implements _GetCharacters {
     required TResult orElse(),
   }) {
     if (getCharacters != null) {
-      return getCharacters(name, status, species, type, gender, page);
+      return getCharacters(name, status, gender, page);
     }
     return orElse();
   }
@@ -478,15 +454,11 @@ abstract class _GetCharacters implements CharacterEvent {
   const factory _GetCharacters(
       {final String? name,
       final CharacterStatus? status,
-      final String? species,
-      final String? type,
       final CharacterGender? gender,
       required final int page}) = _$GetCharactersImpl;
 
   String? get name;
   CharacterStatus? get status;
-  String? get species;
-  String? get type;
   CharacterGender? get gender;
   int get page;
 
@@ -542,7 +514,7 @@ class _$GetFavoriteCharactersImpl implements _GetFavoriteCharacters {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String? name, CharacterStatus? status,
-            String? species, String? type, CharacterGender? gender, int page)
+            CharacterGender? gender, int page)
         getCharacters,
     required TResult Function() getFavoriteCharacters,
     required TResult Function(Character character) addToFavorite,
@@ -558,8 +530,8 @@ class _$GetFavoriteCharactersImpl implements _GetFavoriteCharacters {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult? Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult? Function()? getFavoriteCharacters,
     TResult? Function(Character character)? addToFavorite,
@@ -575,8 +547,8 @@ class _$GetFavoriteCharactersImpl implements _GetFavoriteCharacters {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult Function()? getFavoriteCharacters,
     TResult Function(Character character)? addToFavorite,
@@ -724,7 +696,7 @@ class _$AddToFavoriteImpl implements _AddToFavorite {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String? name, CharacterStatus? status,
-            String? species, String? type, CharacterGender? gender, int page)
+            CharacterGender? gender, int page)
         getCharacters,
     required TResult Function() getFavoriteCharacters,
     required TResult Function(Character character) addToFavorite,
@@ -740,8 +712,8 @@ class _$AddToFavoriteImpl implements _AddToFavorite {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult? Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult? Function()? getFavoriteCharacters,
     TResult? Function(Character character)? addToFavorite,
@@ -757,8 +729,8 @@ class _$AddToFavoriteImpl implements _AddToFavorite {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult Function()? getFavoriteCharacters,
     TResult Function(Character character)? addToFavorite,
@@ -915,7 +887,7 @@ class _$RemoveFromFavoriteImpl implements _RemoveFromFavorite {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String? name, CharacterStatus? status,
-            String? species, String? type, CharacterGender? gender, int page)
+            CharacterGender? gender, int page)
         getCharacters,
     required TResult Function() getFavoriteCharacters,
     required TResult Function(Character character) addToFavorite,
@@ -931,8 +903,8 @@ class _$RemoveFromFavoriteImpl implements _RemoveFromFavorite {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult? Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult? Function()? getFavoriteCharacters,
     TResult? Function(Character character)? addToFavorite,
@@ -948,8 +920,8 @@ class _$RemoveFromFavoriteImpl implements _RemoveFromFavorite {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult Function()? getFavoriteCharacters,
     TResult Function(Character character)? addToFavorite,
@@ -1106,7 +1078,7 @@ class _$ChangeFilterDataImpl implements _ChangeFilterData {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String? name, CharacterStatus? status,
-            String? species, String? type, CharacterGender? gender, int page)
+            CharacterGender? gender, int page)
         getCharacters,
     required TResult Function() getFavoriteCharacters,
     required TResult Function(Character character) addToFavorite,
@@ -1122,8 +1094,8 @@ class _$ChangeFilterDataImpl implements _ChangeFilterData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult? Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult? Function()? getFavoriteCharacters,
     TResult? Function(Character character)? addToFavorite,
@@ -1139,8 +1111,8 @@ class _$ChangeFilterDataImpl implements _ChangeFilterData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String? name, CharacterStatus? status, String? species,
-            String? type, CharacterGender? gender, int page)?
+    TResult Function(String? name, CharacterStatus? status,
+            CharacterGender? gender, int page)?
         getCharacters,
     TResult Function()? getFavoriteCharacters,
     TResult Function(Character character)? addToFavorite,
@@ -1221,6 +1193,8 @@ mixin _$CharacterState {
   CharacterLoadingType get loadingType => throw _privateConstructorUsedError;
   List<Character> get characters => throw _privateConstructorUsedError;
   List<Character> get favorites => throw _privateConstructorUsedError;
+  int get pagesCount => throw _privateConstructorUsedError;
+  int get currentPage => throw _privateConstructorUsedError;
   (CharacterStatus?, CharacterGender?) get filterData =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1229,6 +1203,8 @@ mixin _$CharacterState {
             CharacterLoadingType loadingType,
             List<Character> characters,
             List<Character> favorites,
+            int pagesCount,
+            int currentPage,
             (CharacterStatus?, CharacterGender?) filterData)
         data,
   }) =>
@@ -1239,6 +1215,8 @@ mixin _$CharacterState {
             CharacterLoadingType loadingType,
             List<Character> characters,
             List<Character> favorites,
+            int pagesCount,
+            int currentPage,
             (CharacterStatus?, CharacterGender?) filterData)?
         data,
   }) =>
@@ -1249,6 +1227,8 @@ mixin _$CharacterState {
             CharacterLoadingType loadingType,
             List<Character> characters,
             List<Character> favorites,
+            int pagesCount,
+            int currentPage,
             (CharacterStatus?, CharacterGender?) filterData)?
         data,
     required TResult orElse(),
@@ -1288,6 +1268,8 @@ abstract class $CharacterStateCopyWith<$Res> {
       {CharacterLoadingType loadingType,
       List<Character> characters,
       List<Character> favorites,
+      int pagesCount,
+      int currentPage,
       (CharacterStatus?, CharacterGender?) filterData});
 }
 
@@ -1309,6 +1291,8 @@ class _$CharacterStateCopyWithImpl<$Res, $Val extends CharacterState>
     Object? loadingType = null,
     Object? characters = null,
     Object? favorites = null,
+    Object? pagesCount = null,
+    Object? currentPage = null,
     Object? filterData = null,
   }) {
     return _then(_value.copyWith(
@@ -1324,6 +1308,14 @@ class _$CharacterStateCopyWithImpl<$Res, $Val extends CharacterState>
           ? _value.favorites
           : favorites // ignore: cast_nullable_to_non_nullable
               as List<Character>,
+      pagesCount: null == pagesCount
+          ? _value.pagesCount
+          : pagesCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      currentPage: null == currentPage
+          ? _value.currentPage
+          : currentPage // ignore: cast_nullable_to_non_nullable
+              as int,
       filterData: null == filterData
           ? _value.filterData
           : filterData // ignore: cast_nullable_to_non_nullable
@@ -1344,6 +1336,8 @@ abstract class _$$DataImplCopyWith<$Res>
       {CharacterLoadingType loadingType,
       List<Character> characters,
       List<Character> favorites,
+      int pagesCount,
+      int currentPage,
       (CharacterStatus?, CharacterGender?) filterData});
 }
 
@@ -1362,6 +1356,8 @@ class __$$DataImplCopyWithImpl<$Res>
     Object? loadingType = null,
     Object? characters = null,
     Object? favorites = null,
+    Object? pagesCount = null,
+    Object? currentPage = null,
     Object? filterData = null,
   }) {
     return _then(_$DataImpl(
@@ -1377,6 +1373,14 @@ class __$$DataImplCopyWithImpl<$Res>
           ? _value._favorites
           : favorites // ignore: cast_nullable_to_non_nullable
               as List<Character>,
+      pagesCount: null == pagesCount
+          ? _value.pagesCount
+          : pagesCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      currentPage: null == currentPage
+          ? _value.currentPage
+          : currentPage // ignore: cast_nullable_to_non_nullable
+              as int,
       filterData: null == filterData
           ? _value.filterData
           : filterData // ignore: cast_nullable_to_non_nullable
@@ -1392,6 +1396,8 @@ class _$DataImpl implements _Data {
       {required this.loadingType,
       required final List<Character> characters,
       required final List<Character> favorites,
+      required this.pagesCount,
+      required this.currentPage,
       required this.filterData})
       : _characters = characters,
         _favorites = favorites;
@@ -1415,11 +1421,15 @@ class _$DataImpl implements _Data {
   }
 
   @override
+  final int pagesCount;
+  @override
+  final int currentPage;
+  @override
   final (CharacterStatus?, CharacterGender?) filterData;
 
   @override
   String toString() {
-    return 'CharacterState.data(loadingType: $loadingType, characters: $characters, favorites: $favorites, filterData: $filterData)';
+    return 'CharacterState.data(loadingType: $loadingType, characters: $characters, favorites: $favorites, pagesCount: $pagesCount, currentPage: $currentPage, filterData: $filterData)';
   }
 
   @override
@@ -1433,6 +1443,10 @@ class _$DataImpl implements _Data {
                 .equals(other._characters, _characters) &&
             const DeepCollectionEquality()
                 .equals(other._favorites, _favorites) &&
+            (identical(other.pagesCount, pagesCount) ||
+                other.pagesCount == pagesCount) &&
+            (identical(other.currentPage, currentPage) ||
+                other.currentPage == currentPage) &&
             (identical(other.filterData, filterData) ||
                 other.filterData == filterData));
   }
@@ -1443,6 +1457,8 @@ class _$DataImpl implements _Data {
       loadingType,
       const DeepCollectionEquality().hash(_characters),
       const DeepCollectionEquality().hash(_favorites),
+      pagesCount,
+      currentPage,
       filterData);
 
   /// Create a copy of CharacterState
@@ -1460,10 +1476,13 @@ class _$DataImpl implements _Data {
             CharacterLoadingType loadingType,
             List<Character> characters,
             List<Character> favorites,
+            int pagesCount,
+            int currentPage,
             (CharacterStatus?, CharacterGender?) filterData)
         data,
   }) {
-    return data(loadingType, characters, favorites, filterData);
+    return data(loadingType, characters, favorites, pagesCount, currentPage,
+        filterData);
   }
 
   @override
@@ -1473,10 +1492,13 @@ class _$DataImpl implements _Data {
             CharacterLoadingType loadingType,
             List<Character> characters,
             List<Character> favorites,
+            int pagesCount,
+            int currentPage,
             (CharacterStatus?, CharacterGender?) filterData)?
         data,
   }) {
-    return data?.call(loadingType, characters, favorites, filterData);
+    return data?.call(loadingType, characters, favorites, pagesCount,
+        currentPage, filterData);
   }
 
   @override
@@ -1486,12 +1508,15 @@ class _$DataImpl implements _Data {
             CharacterLoadingType loadingType,
             List<Character> characters,
             List<Character> favorites,
+            int pagesCount,
+            int currentPage,
             (CharacterStatus?, CharacterGender?) filterData)?
         data,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(loadingType, characters, favorites, filterData);
+      return data(loadingType, characters, favorites, pagesCount, currentPage,
+          filterData);
     }
     return orElse();
   }
@@ -1530,6 +1555,8 @@ abstract class _Data implements CharacterState {
           {required final CharacterLoadingType loadingType,
           required final List<Character> characters,
           required final List<Character> favorites,
+          required final int pagesCount,
+          required final int currentPage,
           required final (CharacterStatus?, CharacterGender?) filterData}) =
       _$DataImpl;
 
@@ -1539,6 +1566,10 @@ abstract class _Data implements CharacterState {
   List<Character> get characters;
   @override
   List<Character> get favorites;
+  @override
+  int get pagesCount;
+  @override
+  int get currentPage;
   @override
   (CharacterStatus?, CharacterGender?) get filterData;
 
