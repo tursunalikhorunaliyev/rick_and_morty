@@ -17,8 +17,8 @@ class LocalDataSourceImpl implements LocalDataSource {
   }
 
   @override
-  Future<void> removeFavorite(int id) async {
-    await favoritesBox.delete(id);
+  Future<void> removeFavorite(Character character) async {
+    await favoritesBox.delete(character.id);
   }
 
   @override

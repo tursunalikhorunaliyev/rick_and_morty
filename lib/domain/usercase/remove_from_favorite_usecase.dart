@@ -7,7 +7,7 @@ class RemoveFromFavoriteUseCase{
   RemoveFromFavoriteUseCase({required this.characterRepository});
 
   Future<List<Character>> call(Character character) async{
-    await characterRepository.addToFavorite(character);
+    await characterRepository.removeFromFavorite(character);
     return characterRepository.allFavoriteCharacters();
   }
 }
