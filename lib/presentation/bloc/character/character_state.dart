@@ -6,6 +6,8 @@ class CharacterState with _$CharacterState {
     required CharacterLoadingType loadingType,
     required List<Character> characters,
     required List<Character> favorites,
+    required int pagesCount,
+    required int currentPage,
     required (CharacterStatus?, CharacterGender?) filterData,
   }) = _Data;
 }

@@ -8,7 +8,7 @@ class GetCharacterUseCase {
 
   GetCharacterUseCase({required this.characterRepository});
 
-  Future<List<Character>> call({String? name, CharacterStatus? status, String? species, String? type, CharacterGender? gender, required int page}) async {
-    return await characterRepository.getCharacters(name: name, status: status?.name.capitalize(), species: species, type: type, gender: gender?.name.capitalize(), page: page);
+  Future<(List<Character>, int)> call({String? name, CharacterStatus? status, CharacterGender? gender, required int page}) async {
+    return await characterRepository.getCharacters(name: name, status: status?.name.capitalize(), gender: gender?.name.capitalize(), page: page);
   }
 }
