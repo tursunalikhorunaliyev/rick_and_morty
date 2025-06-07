@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                                               );
                                             }
                                           },
-                                          isFavorite: state.favorites.contains(state.characters[index]),
+                                          isFavorite: state.favorites.map((e) => e.id).contains(state.characters[index].id),
                                         ),
                                         if (state.characters.length - 1 == index)
                                           Padding(

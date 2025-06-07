@@ -20,6 +20,8 @@ class CharacterRepositoryImpl implements CharacterRepository{
 
   @override
   Future<void> addToFavorite(Character character) async{
+    print(character.gender);
+    print(character.status);
    return await localDataSource.saveFavorite(character);
   }
 

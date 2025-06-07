@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+import 'package:rick_and_morty/domain/enum/enums.dart';
 part 'character_adapter.g.dart';
 
 

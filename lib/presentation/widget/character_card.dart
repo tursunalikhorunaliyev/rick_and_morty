@@ -51,32 +51,30 @@ class CharacterCard extends StatelessWidget {
                 ),
                 child: Text(
                   character.originName,
-                  style: GoogleFonts.openSans(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
+                  style: GoogleFonts.openSans(color: Colors.white, fontSize: 16),
                 ),
               ),
             ),
-          if(onTapStar!=null)  Positioned(
-              top: 10,
-              right: 10,
-              child: Container(
-                width: 40,
-                height: 40,
-                decoration: ShapeDecoration(
-                  shape: const CircleBorder(),
-                  color: Colors.black.withOpacity(0.5),
-                ),
-                child: IconButton(
-                  onPressed: onTapStar,
-                  icon: Icon(
-                    isFavorite ? EvaIcons.star : EvaIcons.starOutline,
-                    color: Colors.orange,
+            if (onTapStar != null)
+              Positioned(
+                top: 10,
+                right: 10,
+                child: Container(
+                  width: 40,
+                  height: 40,
+                  decoration: ShapeDecoration(
+                    shape: const CircleBorder(),
+                    color: Colors.black.withOpacity(0.5),
+                  ),
+                  child: IconButton(
+                    onPressed: onTapStar,
+                    icon: Icon(
+                      isFavorite ? EvaIcons.star : EvaIcons.starOutline,
+                      color: Colors.orange,
+                    ),
                   ),
                 ),
-              ),
-            )
+              )
           ],
         ),
         const SizedBox(height: 12),
@@ -87,7 +85,7 @@ class CharacterCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(character.name, style: GoogleFonts.openSans(fontSize: 20)),
-                const SizedBox(height: 10),
+                const SizedBox(height: 5),
                 Row(
                   children: [
                     const Icon(EvaIcons.pinOutline, color: Colors.red),
